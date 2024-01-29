@@ -37,7 +37,7 @@ experiments:
     design_file: ./example_data/design/workshop_design.fa
     label_file: ./example_data/design/workshop_labels.tsv
     configs:
-      tutorialCondig:
+      tutorialConfig:
         filter:
           bc_threshold: 5
           DNA:
