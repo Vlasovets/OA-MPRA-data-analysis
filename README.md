@@ -1,6 +1,6 @@
 # MPRAsnakeflow tutorial for the IGVF MPRA workshop
 
-This github contains example data for running MPRAsnakeflow. The resulting files will be analyzed during the workshop. This tutorial can be run in advance at home. 
+This repository contains example data for running MPRAsnakeflow. The resulting files will be analyzed during the workshop. This tutorial can be run in advance at home. 
 
 ## Introduction
 
