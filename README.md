@@ -10,7 +10,13 @@ This readme explains the structure of the data folder and the process to use the
 
 ## Example data
 
-**TODO**: give a small explanation what the ProxReg data is. 
+**Description**  
+
+We designed a CNN-based deep neural network (DNN) to identify variants potentially affecting specific tissues or being tissue-agnostic across diverse human cell lines (e.g., HepG2, HEK293T, K562, WTC-11). We selected 120,000 variants based on high/low predictive effects from our DNN for MPRA experiments across all mentioned cell types.  
+
+All candidate cis-regulatory sequences (cCREs) of length 200bp (flanked from both directions with a 15bp barcode) undergo MPRA in human hepatocellular carcinoma cell line (HepG2) and kidney epithelial (HEK293T) cells as 3 replicates. This example dataset contains ~1000 variants and ~100 negative control sequences tested in HepG2.  
+
+**Preparing the input**  
 
 1. The example data is stored in the `example_data/` directory
 2. Next the `experiment.csv` was generated and added to the same folder. 
