@@ -4,6 +4,8 @@ This repository contains example data for running MPRAsnakeflow. The resulting f
 
 ## Introduction
 
+**TODO: state computational requirements**
+
 MPRAsnakeflow is a pipeline that processes sequencing data from MPRA to create count tables for candidate sequences tested in the experiment.
 The code can be found [here](https://github.com/kircherlab/MPRAsnakeflow) and an extensive documentation [here](https://mprasnakeflow.readthedocs.io/en/latest/).  
 This readme explains the structure of the data folder and the process to use the data as input data for MPRAsnakeflow in the section [Example data](#example-data). Then, the included config file is explained in the section [Config file](#config-file). Finally, we explain how to run the workflow on either a [local machine](#running-the-workflow-local) or [using Slurm](#running-the-workflow-slurm).  
