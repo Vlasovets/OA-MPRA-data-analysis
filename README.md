@@ -1,16 +1,32 @@
-## MPRA workshop directory 
-- In the following directory the MPRAsnakeflow run is shown on example data from the proximal regulator project (TODO: reference to project/ another repo?)
-- TODO: Adding background information of the data here
+# MPRAsnakeflow tutorial for the IGVF MPRA workshop
 
-## Processing:
-1. The corresponding data was downloaded and stored in the `example_data/` directory
+This repository contains example data for running MPRAsnakeflow. The resulting files will be analyzed during the workshop. This tutorial can be run in advance at home. 
+
+## Introduction
+
+**TODO: state computational requirements**
+
+MPRAsnakeflow is a pipeline that processes sequencing data from MPRA to create count tables for candidate sequences tested in the experiment.
+The code can be found [here](https://github.com/kircherlab/MPRAsnakeflow) and an extensive documentation [here](https://mprasnakeflow.readthedocs.io/en/latest/).  
+This readme explains the structure of the data folder and the process to use the data as input data for MPRAsnakeflow in the section [Example data](#example-data). Then, the included config file is explained in the section [Config file](#config-file). Finally, we explain how to run the workflow on either a [local machine](#running-the-workflow-local) or [using Slurm](#running-the-workflow-slurm).  
+
+## Example data
+
+**Description**  
+
+We designed a CNN-based deep neural network (DNN) to identify variants potentially affecting specific tissues or being tissue-agnostic across diverse human cell lines (e.g., HepG2, HEK293T, K562, WTC-11). We selected 120,000 variants based on high/low predictive effects from our DNN for MPRA experiments across all mentioned cell types.  
+
+All candidate cis-regulatory sequences (cCREs) of length 200bp (flanked from both directions with a 15bp barcode) undergo MPRA in human hepatocellular carcinoma cell line (HepG2) and kidney epithelial (HEK293T) cells as 3 replicates. This example dataset contains ~1000 variants and ~100 negative control sequences tested in HepG2.  
+
+**Preparing the input**  
+
+1. The example data is stored in the `example_data/` directory
 2. Next the `experiment.csv` was generated and added to the same folder. 
-    - For this run there is one condition (HepG2) with three technical replicates. Each replicate contains a forward (barcode-forward `DNA/RNA_BC_F`), reverse (barcode-reverse `DNA/RNA_BC_R`), and index (unique molecular identifier `DNA/RNA_UMI`) read for DNA and RNA.
     - In general: This file has the following header (`Condition,Replicate,DNA_BC_F,DNA_UMI,DNA_BC_R,RNA_BC_F,RNA_UMI,RNA_BC_R`). For each replicate to be analyzed the table is filled with condition name (`Condition`), replicate number (`Replicate`) and names of the following three files for DNA and RNA, respectifly. First the barcode forward reads (`DNA_BC_F`, `RNA_BC_F`), DNA / RNA UMI file (`DNA_UMI`, `RNA_UMI`) and the barcode reverse reads (`DNA_BC_R`, `RNA_BC_R`).
 The workflow expects the file names to be in the format <condition>_<type(dna/rna)>-<replicate>_<Fwd/Rev/BC>.fastq.gz
 3. The final `experiment.csv` file is added to the configuration file here called `workshop_config.yaml`. This file is specified as config file later in the snakemake call.
 
-## Explaining the config
+## Config file
 - MPRAsnakeflow can be divided into two steps: 
     1. Assignment workflow: Assign the barcodes used to the corresponding sequences
     2. Experiment workflow: Outputs count tables for the sequences used (requires the assignment workflow to be finished)
@@ -52,7 +68,7 @@ The workflow expects the file names to be in the format <condition>_<type(dna/rn
 
 ## Running the workflow (local)
 - Install snakemake and conda (if not already installed) as shown [here](https://snakemake.readthedocs.io/en/v7.32.3/getting_started/installation.html)
-- If you are running the workflow locally, you can use the following command to check if you set everything up correctly (remove the -n to run the workflow):
+- If you are running the workflow locally, you can use the following command to check if you set everything up correctly. To run the workflow, remove `-n` (the `-n` option performs a dry-run, which can be useful to test if all parameters have been set correctly):
     - Required modifications:
         - Add number of threads (`n_threads`)
         - Add the path to the MPRAsnakeflow Snakefile (`--snakefile`)
