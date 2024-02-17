@@ -8,7 +8,7 @@ This repository contains example data for running MPRAsnakeflow. The resulting f
 
 MPRAsnakeflow is a pipeline that processes sequencing data from MPRA to create count tables for candidate sequences tested in the experiment.
 The code can be found [here](https://github.com/kircherlab/MPRAsnakeflow) and an extensive documentation [here](https://mprasnakeflow.readthedocs.io/en/latest/).  
-This readme explains the structure of the data folder and the process to use the data as input data for MPRAsnakeflow in the section [Example data](#example-data). Then, the included config file is explained in the section [Config file](#config-file). Finally, we explain how to run the workflow on either a [local machine](#running-the-workflow-local) or [using Slurm](#running-the-workflow-slurm).  
+This readme explains the structure of the data folder and the process to use the data as input data for MPRAsnakeflow in the section [Example data](#example-data). Then, the included config file is explained in the section [Config file](#config-file). Finally, we explain how to run the workflow on either a [local machine](#running-the-workflow-local) or [using Slurm](#running-the-workflow-slurm).
 
 ## Example data
 
@@ -67,6 +67,7 @@ The workflow expects the file names to be in the format <condition>_<type(dna/rn
 
 
 ## Running the workflow (local)
+- If you want to run the workflow locally with the example data it took on a unix system with a single core 1h and required 3GB of RAM.
 - Install snakemake and conda (if not already installed) as shown [here](https://snakemake.readthedocs.io/en/v7.32.3/getting_started/installation.html)
 - If you are running the workflow locally, you can use the following command to check if you set everything up correctly. To run the workflow, remove `-n` (the `-n` option performs a dry-run, which can be useful to test if all parameters have been set correctly):
     - Required modifications:
