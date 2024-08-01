@@ -8,9 +8,8 @@ experiments:
     demultiplex: false
     assignments:
       MPRAworkshop:
-        type: config
-        assignment_name: assignMPRAworkshop
-        assignment_config: default
+        type: file
+        assignment_file: example_data/assignment/assignment_barcodes.default.tsv.gz
     label_file: example_data/design/workshop_labels.tsv
     configs:
       tutorialConfig:
