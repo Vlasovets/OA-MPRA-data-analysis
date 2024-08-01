@@ -1,0 +1,7 @@
+---
+snakefile: /data/MPRAsnakeflow/workflow/Snakefile
+software-deployment-method: conda
+conda-prefix: /data/conda_envs
+cores: 1
+set-threads:
+  assignment_mapping_bwa: 10

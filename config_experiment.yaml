@@ -1,0 +1,22 @@
+---
+experiments:
+  experimentMPRAworkshop:
+    bc_length: 15
+    umi_length: 16
+    data_folder: example_data/counts
+    experiment_file: example_data/experiment.csv
+    demultiplex: false
+    assignments:
+      MPRAworkshop:
+        type: config
+        assignment_name: assignMPRAworkshop
+        assignment_config: default
+    label_file: example_data/design/workshop_labels.tsv
+    configs:
+      tutorialConfig:
+        filter:
+          bc_threshold: 5
+          DNA:
+            min_counts: 1
+          RNA:
+            min_counts: 1
