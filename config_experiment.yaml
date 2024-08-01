@@ -5,7 +5,6 @@ experiments:
     umi_length: 16
     data_folder: example_data/counts
     experiment_file: example_data/experiment.csv
-    demultiplex: false
     assignments:
       MPRAworkshop:
         type: file
