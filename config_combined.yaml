@@ -24,6 +24,7 @@ experiments:
         assignment_config: default
     label_file: example_data/design/workshop_labels.tsv
     configs:
+      default: {}
       tutorialConfig:
         filter:
           bc_threshold: 5
