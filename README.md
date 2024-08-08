@@ -16,7 +16,7 @@ If you have more questions or need help, please write an issue on the [MPRAsnake
 - Assignment: `tutorial_assignment.ipynb`  
   This notebook is used to assign the barcodes to the sequences and to create a final file which maps barcodes to designed oligos, like `example_data/assignment/assignment_barcodes.default.tsv.gz`. The config file for the part of the workflow is `config_assignment.yaml`.
 - Experiment: `tutorial_experiment.ipynb`  
-  This notebook is used to generate activity measurements from DNA, barcode counts. The input file of the Assignment workflow is needed to associate the barcodes to designed oligos. The config file for the part of the workflow is `config_experiment.yaml`.
+  This notebook is used to generate activity measurements from DNA, barcode counts. The input file of the assignment workflow is needed to associate the barcodes to designed oligos. The config file for the part of the workflow is `config_experiment.yaml`.
 - Combined: `tutorial_combined.ipynb`  
   This notebook runs both, the assignment and the experiment workflow. It does not use a pre-defined assignment file (maps barcodes to oligos). It uses directly the output of the assignment, configured in the config file. The advantage is that more jobs can be parallalized because the oligo/barcode map is needed later in the experiment workflow. Therfore the jobs before can already be run. This is usually helpfull if you run MPRAsnakeflow on a large HPC using a scheduling system like SLURM. The config file for the part of the workflow is `config_combined.yaml`.
 

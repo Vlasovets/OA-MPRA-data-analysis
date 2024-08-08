@@ -11,6 +11,15 @@ assignments:
           alignment_start:
             min: 14
             max: 16
+    FW:
+      - example_data/assignment/assoc_fwd.fastq.gz
+    BC:
+      - example_data/assignment/assoc_bc.fastq.gz
+    REV:
+      - example_data/assignment/assoc_rev.fastq.gz
+    design_file: example_data/design/workshop_design.fa
+    configs:
+      default: {}
 experiments:
   experimentMPRAworkshop:
     bc_length: 15
