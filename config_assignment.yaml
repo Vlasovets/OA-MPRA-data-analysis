@@ -1,0 +1,25 @@
+---
+# global:
+#   assignments:
+#     split_number: 30
+assignments:
+  assignMPRAworkshop:
+    bc_length: 15
+    alignment_tool:
+        tool: bwa
+        configs:
+          sequence_length:
+            min: 195
+            max: 205
+          alignment_start:
+            min: 14
+            max: 16
+    FW:
+      - example_data/assignment/assoc_fwd.fastq.gz
+    BC:
+      - example_data/assignment/assoc_bc.fastq.gz
+    REV:
+      - example_data/assignment/assoc_rev.fastq.gz
+    design_file: example_data/design/workshop_design.fa
+    configs:
+      default: {}
