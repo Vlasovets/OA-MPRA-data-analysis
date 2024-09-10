@@ -1,4 +1,4 @@
-FROM snakemake/snakemake:v8.16.0
+FROM snakemake/snakemake:v8.20.3
 
 
 # MPRAsnakeflow development version
