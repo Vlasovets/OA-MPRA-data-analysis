@@ -1,13 +1,15 @@
+ARG MPRASNAKEFLOW_VERSION="0.1.0"
+
 FROM snakemake/snakemake:v8.20.3
 
-
-# MPRAsnakeflow development version
+# Get MPRAsnakeflow
+ARG MPRASNAKEFLOW_VERSION
 RUN <<EOR
 	mkdir -p /data
 	cd /data
-	git clone https://github.com/kircherlab/MPRAsnakeflow.git
-	cd MPRAsnakeflow
-	git checkout development
+	wget https://github.com/kircherlab/MPRAsnakeflow/archive/refs/tags/v${MPRASNAKEFLOW_VERSION}.tar.gz
+	tar -xzf v${MPRASNAKEFLOW_VERSION}.tar.gz
+	mv MPRAsnakeflow-${MPRASNAKEFLOW_VERSION} MPRAsnakeflow
 EOR
 
 # assoc_basic data
@@ -22,8 +24,8 @@ RUN <<EOR
 	wget -q -O SRR10800986_2.fastq.gz https://kircherlab.bihealth.org/download/ali/SRR10800986_2.200K.fastq.gz
 	wget -q -O SRR10800986_3.fastq.gz https://kircherlab.bihealth.org/download/ali/SRR10800986_3.200K.fastq.gz
 EOR
+
 # count_basic data
-# assoc_basic data
 RUN <<EOR
 	mkdir -p /data/work/count_basic/data
 
@@ -63,7 +65,6 @@ RUN <<EOR
 EOR
 
 # snakemake profile
-
 RUN <<EOR
 	mkdir -p /etc/xdg/snakemake/mprasnakeflow
 EOR
