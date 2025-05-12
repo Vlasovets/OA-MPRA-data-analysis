@@ -1,19 +1,14 @@
 ---
-# global:
-#   assignments:
-#     split_number: 30
+version: "0.5"
 assignments:
   assignMPRAworkshop:
     bc_length: 15
     alignment_tool:
+        # split_number: 30 # number of files fastq should be split for parallelization
         tool: bbmap
         configs:
-          sequence_length:
-            min: 195
-            max: 205
-          alignment_start:
-            min: 14
-            max: 16
+          sequence_length: 200
+          alignment_start: 1
     FW:
       - example_data/assignment/assoc_fwd.fastq.gz
     BC:
