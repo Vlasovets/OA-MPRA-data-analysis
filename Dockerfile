@@ -1,15 +1,10 @@
-FROM snakemake/snakemake:v9.3.4
+ARG MPRASNAKEFLOW_VERSION=0.1.1
+ARG SNAKEMAKE_VERSION=8.20.5
 
-
-COPY version.txt /tmp/version.txt
-
-#Set the version of MPRAsnakeflow
-RUN export MPRASNAKEFLOW_VERSION=$(cat /tmp/version.txt) && \
-	echo "MPRAsnakeflow version: ${MPRASNAKEFLOW_VERSION}"
-
-ARG MPRASNAKEFLOW_VERSION
+FROM snakemake/snakemake:v${SNAKEMAKE_VERSION}
 
 # Get MPRAsnakeflow
+ENV MPRASNAKEFLOW_VERSION=${MPRASNAKEFLOW_VERSION}
 RUN <<EOR
 	mkdir -p /data
 	cd /data

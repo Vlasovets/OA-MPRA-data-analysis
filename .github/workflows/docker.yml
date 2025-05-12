@@ -15,8 +15,9 @@
           - name: Read version from file
             id: read_version
             run: |
-              VERSION=$(cat version.txt)
-              echo "VERSION=$VERSION" >> $GITHUB_ENV
+              export $(cat versions.txt | xargs)
+              echo "MPRASNAKEFLOW_VERSION=$MPRASNAKEFLOW_VERSION" >> $GITHUB_ENV
+              echo "SNAKEMAKE_VERSION=$SNAKEMAKE_VERSION" >> $GITHUB_ENV
     
     
           - name: Login to Docker Hub
@@ -35,4 +36,7 @@
             with:
               context: .
               push: true
-              tags: visze/mprasnakeflow_tutorial:${{ env.VERSION }}
+              tags: visze/mprasnakeflow_tutorial:${{ env.MPRASNAKEFLOW_VERSION }}
+              build-args: |
+                  MPRASNAKEFLOW_VERSION=env.MPRASNAKEFLOW_VERSION
+                  SNAKEMAKE_VERSION=env.SNAKEMAKE_VERSION
