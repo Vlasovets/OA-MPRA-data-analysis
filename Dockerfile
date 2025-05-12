@@ -1,9 +1,15 @@
-ARG MPRASNAKEFLOW_VERSION="0.1.0"
+FROM snakemake/snakemake:v9.3.4
 
-FROM snakemake/snakemake:v8.20.3
+
+COPY version.txt /tmp/version.txt
+
+#Set the version of MPRAsnakeflow
+RUN export MPRASNAKEFLOW_VERSION=$(cat /tmp/version.txt) && \
+	echo "MPRAsnakeflow version: ${MPRASNAKEFLOW_VERSION}"
+
+ARG MPRASNAKEFLOW_VERSION
 
 # Get MPRAsnakeflow
-ARG MPRASNAKEFLOW_VERSION
 RUN <<EOR
 	mkdir -p /data
 	cd /data
@@ -71,10 +77,19 @@ EOR
 COPY profiles/mprasnakeflow/config.yaml /etc/xdg/snakemake/mprasnakeflow/config.yaml
 ENV SNAKEMAKE_PROFILE=mprasnakeflow
 
-# create assignment conda environments
+# prepare for conda envs
+
 RUN <<EOR
 	RUN mkdir -p /data/conda_envs
+	conda config --set auto_activate_base false
+	conda config --add channels nodefaults
+	conda config --add channels bioconda
+	conda config --add channels conda-forge
 	conda config --set channel_priority strict
+EOR
+
+# create assignment conda environments
+RUN <<EOR
 	cd /data/work/assoc_basic
 	snakemake --configfile /data/MPRAsnakeflow/resources/assoc_basic/config.yml \
 	--quiet rules --conda-create-envs-only
@@ -82,8 +97,6 @@ EOR
 
 # create assignment conda environments
 RUN <<EOR
-	RUN mkdir -p /data/conda_envs
-	conda config --set channel_priority strict
 	cd /data/work/count_basic
 	snakemake --configfile /data/MPRAsnakeflow/resources/count_basic/config.yml \
 	--quiet rules --conda-create-envs-only
