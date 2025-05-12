@@ -38,5 +38,5 @@
               push: true
               tags: visze/mprasnakeflow_tutorial:${{ env.MPRASNAKEFLOW_VERSION }}
               build-args: |
-                  MPRASNAKEFLOW_VERSION=env.MPRASNAKEFLOW_VERSION
-                  SNAKEMAKE_VERSION=env.SNAKEMAKE_VERSION
+                  MPRASNAKEFLOW_VERSION=${{ env.MPRASNAKEFLOW_VERSION }}
+                  SNAKEMAKE_VERSION=${{ env.SNAKEMAKE_VERSION }}
