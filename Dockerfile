@@ -31,6 +31,7 @@ RUN <<EOR
 	mkdir -p /data/work/count_basic/data
 
 	cp /data/MPRAsnakeflow/resources/count_basic/experiment.csv /data/work/count_basic/
+	cp /data/MPRAsnakeflow/resources/count_basic/labels.tsv /data/work/count_basic/
 	cp /data/MPRAsnakeflow/resources/count_basic/SRR10800986_barcodes_to_coords.tsv.gz /data/work/count_basic/
 
 	cd /data/work/count_basic/data
