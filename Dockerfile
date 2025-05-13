@@ -76,7 +76,7 @@ ENV SNAKEMAKE_PROFILE=mprasnakeflow
 # prepare for conda envs
 
 RUN <<EOR
-	RUN mkdir -p /data/conda_envs
+	mkdir -p /data/conda_envs
 	conda config --set auto_activate_base false
 	conda config --add channels nodefaults
 	conda config --add channels bioconda
