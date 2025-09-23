@@ -1,12 +1,41 @@
-# MPRAsnakeflow tutorial
+# MPRA Data Preprocessing and Analysis Results
 
-This repository contains example data and python notebooks for running MPRAsnakeflow. You can run the notebooks locally or within colab.
+This repository contains the preprocessing workflow and analysis results for MPRA (Massively Parallel Reporter Assay) data.
 
-## Introduction
+## Contents
 
-MPRAsnakeflow is a pipeline that processes sequencing data from MPRA to create count tables for candidate sequences tested in the experiment.
-The code can be found [here](https://github.com/kircherlab/MPRAsnakeflow) and an extensive documentation [here](https://mprasnakeflow.readthedocs.io).  
-This readme explains the types of notebooks that are within the repository and type of example data as well as the structure of the input or MPRAsnakeflow.
+### Main Analysis
+- **`data_preprocessing.ipynb`** - Comprehensive Jupyter notebook containing:
+  - R1/R2 sequencing data quality control and trimming
+  - Oligo library duplicate detection and curation
+  - Detailed preprocessing workflow with explanations
+
+### Analysis Results
+- **`results/assignment/assignMPRAworkshop/statistic/`**
+  - `assignment.default.png` - Assignment statistics visualization
+  - `assigned_counts.default.tsv` - Assigned barcode counts
+  - `total_counts.tsv` - Total count statistics
+  - `assignment/bam_stats.txt` - BAM alignment statistics
+
+## Workflow Overview
+
+1. **Sequencing Data Processing**
+   - R1 barcode length analysis and trimming
+   - R2 adapter identification and removal
+   - Paired-end read synchronization
+
+2. **Oligo Library Curation**
+   - Duplicate ID detection and resolution
+   - Sequence-based deduplication
+   - Quality control validation
+
+## Usage
+
+Open `data_preprocessing.ipynb` in Jupyter to see the complete analysis workflow with detailed explanations and results.
+
+## Generated Files
+
+The notebook generates processed FASTQ files and curated FASTA libraries ready for downstream MPRA analysis.
 
 If you have more questions or need help, please write an issue on the [MPRAsnakeflow_tutorial repository](https://github.com/kircherlab/MPRAsnakeflow_tutorial/issues). For general questions about MPRAsnakeflow, please write an issue on the [MPRAsnakeflow repository](https://github.com/kircherlab/MPRAsnakeflow/issues). You can also contact the main developer [Max Schubach](max.schubach@bih-charite.de).
 
