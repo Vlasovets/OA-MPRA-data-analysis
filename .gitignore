@@ -9,6 +9,9 @@
 # Include the main analysis notebook
 !data_preprocessing.ipynb
 
+# Include configuration file
+!config_assignment.yaml
+
 # Include specific result files for collaboration
 !results/
 results/*
