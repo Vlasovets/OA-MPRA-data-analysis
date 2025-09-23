@@ -1,4 +1,0 @@
-Condition,Replicate,DNA_BC_F,DNA_UMI,DNA_BC_R,RNA_BC_F,RNA_UMI,RNA_BC_R
-HepG2,1,dna-1_S1_R1_001.fastq.gz,dna-1_S1_R2_001.fastq.gz,dna-1_S1_R3_001.fastq.gz,rna-1_S4_R1_001.fastq.gz,rna-1_S4_R2_001.fastq.gz,rna-1_S4_R3_001.fastq.gz
-HepG2,2,dna-2_S2_R1_001.fastq.gz,dna-2_S2_R2_001.fastq.gz,dna-2_S2_R3_001.fastq.gz,rna-2_S5_R1_001.fastq.gz,rna-2_S5_R2_001.fastq.gz,rna-2_S5_R3_001.fastq.gz
-HepG2,3,dna-3_S3_R1_001.fastq.gz,dna-3_S3_R2_001.fastq.gz,dna-3_S3_R3_001.fastq.gz,rna-3_S6_R1_001.fastq.gz,rna-3_S6_R2_001.fastq.gz,rna-3_S6_R3_001.fastq.gz
