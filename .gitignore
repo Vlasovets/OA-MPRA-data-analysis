@@ -1,5 +1,45 @@
-results*
-logs/*
-.snakemake*
-internal_README.md
-mprasnakeflow_tutorial.sif
+# MPRA Preprocessing - Share only specific files
+# Ignore everything by default
+*
+
+# Essential repository files
+!.gitignore
+!README.md
+
+# Include the main analysis notebook
+!data_preprocessing.ipynb
+
+# Include specific result files for collaboration
+!results/
+results/*
+!results/assignment/
+results/assignment/*
+!results/assignment/assignMPRAworkshop/
+results/assignment/assignMPRAworkshop/*
+!results/assignment/assignMPRAworkshop/statistic/
+results/assignment/assignMPRAworkshop/statistic/*
+
+# Specific result files to share
+!results/assignment/assignMPRAworkshop/statistic/assignment.default.png
+!results/assignment/assignMPRAworkshop/statistic/assigned_counts.default.tsv
+!results/assignment/assignMPRAworkshop/statistic/total_counts.tsv
+!results/assignment/assignMPRAworkshop/statistic/assignment/
+results/assignment/assignMPRAworkshop/statistic/assignment/*
+!results/assignment/assignMPRAworkshop/statistic/assignment/bam_stats.txt
+
+# Exclude everything else
+example_data/
+real_data/
+.snakemake/
+.cache/
+.config/
+.ipynb_checkpoints/
+.ipython/
+.local/
+libpod/
+profiles/
+logs/
+*.log
+*.sif
+versions.txt
+Dockerfile
