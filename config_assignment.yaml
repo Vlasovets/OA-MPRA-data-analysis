@@ -12,11 +12,11 @@ assignments:
         alignment_start: 1
         min_mapping_quality: 30   #  ~1 in 1000 chance the mapping is wrong
     FW:
-      - /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/reverse/24L005276_S11_L001_R2_001.fastq.gz ### use R2 as forward reads
+      - /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/reverse/24L005276_S11_L001_R2_001.r2trim.fastq.gz ### use R2 as forward reads
     BC:
       - /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/forward/24L005276_S11_L001_R1_first12bp.fastq.gz  ### only 12bp barcodes file which you get from the forward reads after trimming the first bp which was random
     REV:
-      - /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/reverse/24L005276_S11_L001_R2_001.revcomp.fastq.gz ### use reverse complemented R2 reads as reverse reads
+      - /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/reverse/24L005276_S11_L001_R2_001.r2trim.revcomp.fastq.gz ### use reverse complemented R2 reads as reverse reads
 
     design_file: /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/real_data/assignment/designed_oligos_first149bp_with_CC.fasta ### CC + length of R2 trimmed version
 
