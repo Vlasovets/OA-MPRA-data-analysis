@@ -38,7 +38,6 @@ cd /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/
 
 # 4) Run assignment with your Slurm profile
 snakemake \
-  --rerun-incomplete \
   --profile /home/itg/oleg.vlasovets/.snakemake_profile \
   --snakefile  /home/itg/oleg.vlasovets/projects/MPRAsnakeflow/workflow/Snakefile \
   --configfile /lustre/groups/itg/teams/zeggini/projects/GO2/MPRA/mpra_test/config_experiment.yaml \
